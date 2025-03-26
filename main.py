@@ -38,7 +38,7 @@ class JMPlugin(Star):
     # 注册指令的装饰器。指令名为 JM下载。注册成功后，发送 `/JM下载` 就会触发这个指令
     @filter.command("jm下载")
     async def JMid(self, event: AstrMessageEvent):
-        path = os.path.abspath(os.path.dirname(__file__))
+        path = "/root/data/plugins/aaa"
         messages = event.get_messages()
         if not messages:
             yield event.plain_result("请输入要下载的本子ID,如果有多页，请输入第一页的ID")
