@@ -58,7 +58,7 @@ class JMPlugin(Star):
         if os.path.exists(pdf_path):
             yield event.plain_result(f"本子 {tokens} 已存在，直接发送")
             yield event.chain_result(
-                [File(name=f"{tokens}.pdf", file=f"file://{pdf_send}")]
+                [File(name=f"{tokens}.pdf", file=f"file://{pdf_path}")]
             )
             return
             
@@ -76,7 +76,7 @@ class JMPlugin(Star):
         if os.path.exists(pdf_path):
             yield event.plain_result(f"本子 {tokens} 下载完成")
             yield event.chain_result(
-                [文件(name=f"{tokens}.pdf", file=f"file://{pdf_send}")]
+                [File(name=f"{tokens}.pdf", file=f"file://{pdf_path}")]
             )
         else:
             yield event.plain_result(f"下载完成，但未找到生成的PDF文件，请检查下载路径")
