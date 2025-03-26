@@ -77,7 +77,9 @@ class JMPlugin(Star):
             yield event.plain_result(f"本子 {tokens} 下载完成")
             yield event.chain_result(
                 [File(name=f"{tokens}.pdf", file=f"file://{pdf_path}")]
-
+            )
+        else:
+            yield event.plain_result(f"下载完成，但未找到生成的PDF文件，请检查下载路径")
 
     @filter.command("jm_help")
     async def show_help(self, event: AstrMessageEvent):
