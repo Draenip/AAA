@@ -52,7 +52,7 @@ class JMPlugin(Star):
             
         tokens = parts[1]  
         pdf_path = f"{path}/pdf/{tokens}.pdf"
-        pdf_send = f"/data/plugins/aaa/pdf/{tokens}.pdf"
+        pdf_send = f"/root/data/plugins/aaa/pdf/{tokens}.pdf"
         
         # 检查文件是否已存在
         if os.path.exists(pdf_path):
